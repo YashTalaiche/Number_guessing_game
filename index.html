@@ -186,25 +186,54 @@
     <!-- basic structure -->
     <div class="login">
         <h1>Login</h1>
-        <form method="post">
+        <form method="post"   action = "registerd.html" onsubmit="return validation()">
             <input type="text" name="u" placeholder="Username" required="required" id="username" />
             <input type="password" name="p" placeholder="Password" required="required" id="password" />
-            <button type="submit" class="btn btn-primary btn-block btn-large" onclick="validate()">Login</button>
+            <button type="submit" class="btn btn-primary btn-block btn-large">Login</button>
         </form>
     </div>
+   
     <script>
-        function validate()
-        {
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
-            if(username == "admin" && password == "user")
-            {
-                
-            }
-
+        function validation() {
+         var isValid = true;
+         var x = document.getElementById('username').value;
+         var y = document.getElementById('password').value;
+         
+        if (x=="admin" && y=="1234"){
+            isValid=true;
         }
+        else{
+            isValid=false;
+        }
+         if(isValid) {
+             
+            window.location = 'registerd.html'; // your desired location
+         }
+         else{
+             alert("username and password is not valid");
+         }
+         
+        
+         return false; // always return false to prevent form from submission.
+        }
+        </script>
 
-    </script>
+   
+
 </body>
+
+
+
+
+<!-- function verifyEmail() {
+    var x = document.getElementById('email').value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos< 1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("Not a valid e-mail address");
+        return false;
+    }
+}
+</script> -->
 
 </html>
