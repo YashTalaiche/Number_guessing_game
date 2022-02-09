@@ -31,6 +31,10 @@
         document.getElementById("submitguess").onclick = function(){   
        var x = document.getElementById("guessField").value;
       
+       if (guess==5){
+          
+        window.location = 'lose.html'; 
+       }
        if(x == y)
        {    
            alert("CONGRATULATIONS!!! YOU GUESSED IT RIGHT IN "
